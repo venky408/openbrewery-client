@@ -21,7 +21,7 @@ const MapContainer = () => {
         <GoogleMapReact
            defaultCenter= {defaultProps.center}
            defaultZoom={defaultProps.zoom}
-           API_KEY = {api_key}
+           //API_KEY = {api_key}
         >
           <AnyReactComponent
             lat={latitude}
