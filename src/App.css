@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin-bottom: 100px !important;
 }
 
 .App-logo {
@@ -40,8 +41,15 @@
   background-color: rgb(255, 162, 0);
   height: 60px;
 }
+.card-body{
+  background-color: rgb(255, 162, 0);
+  border-radius: 10px;
+  text-align: left;
+}
+
 .navbar-brand{
 color: black;
 font-weight: bold;
 margin: 50px; ;
 }
+

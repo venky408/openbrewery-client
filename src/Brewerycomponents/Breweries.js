@@ -17,7 +17,7 @@ const Breweries = () => {
     return (
         <div className="container">
             <div className="py-4">
-                <h1>Breweries</h1><br/>
+                <h1 style={{ backgroundColor: "bisque", borderRadius:"10px" }}>Breweries</h1><br/>
 
                 <table className="table table-dark table-striped">
                     <thead>
