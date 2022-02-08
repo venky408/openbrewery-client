@@ -5,8 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('./Brewerycomponents/beerInfo.png');
-  /* background-color: bisque !important; */
+  background-color: bisque !important;
 }
 
 code {

@@ -1,35 +1,40 @@
+import React, { Component } from 'react';
+import { GoogleMap, LoadScript, Marker, InfoWindow  } from '@react-google-maps/api';
 
-import { Component, React } from "react";
-import GoogleMapReact from 'google-map-react';
-import { useParams } from "react-router-dom";
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+const Map = (props) =>{
+    //console.log(props.longitude, props.latitude);
 
-const MapContainer = () => {
-    const { latitude } = useParams();
-    const {longitude} = useParams();
-  const defaultProps = {
-    center: {
-      lat: 59.95,
-      lng: 30.33
-    },
-    zoom: 14
-  };
-  
-    return (
-      <div style={{ height: '50vh', width: '50%' }}>
-        <GoogleMapReact
-           defaultCenter= {defaultProps.center}
-           defaultZoom={defaultProps.zoom}
-           //API_KEY = {api_key}
+    const containerStyle = {
+        width: '400px',
+        height: '400px',
+        borderRadius : '10px'
+      };
+      
+      const center = {
+            lat:parseFloat(props.latitude),
+            lng:  parseFloat(props.longitude)
+      };
+
+      return (
+        <LoadScript
+          //googleMapsApiKey="test_key"
+          googleMapsApiKey = {process.env.REACT_APP_GEO_API_KEY}
         >
-          <AnyReactComponent
-            lat={latitude}
-            lng={longitude}
-            text="Test Marker"
-          />
-        </GoogleMapReact>
-      </div>
-    );
+          <GoogleMap
+            mapContainerStyle={containerStyle}
+            center={center}
+            zoom={10}
+            streetView="StreetViewPanorama"
+          >
+            
+            <Marker
+              position={center}
+            />
+          </GoogleMap>
+        </LoadScript>
+
+      );
+
 };
-export default MapContainer;
+export default Map;

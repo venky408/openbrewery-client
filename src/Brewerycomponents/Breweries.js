@@ -17,7 +17,7 @@ const Breweries = () => {
     return (
         <div className="container">
             <div className="py-4">
-                <h1 style={{ backgroundColor: "bisque", borderRadius:"10px" }}>Breweries</h1><br/>
+                <h1 style={{ borderRadius:"10px" }}>Breweries</h1><br/>
 
                 <table className="table table-dark table-striped">
                     <thead>
@@ -34,7 +34,7 @@ const Breweries = () => {
                             <tr>
                                 <th scope="row">{brewery.name}</th>
                                 <td>{brewery.brewery_type}</td>
-                                <td>{brewery.street}</td>
+                                <td>{brewery.street} <br/> {brewery.city}, {brewery.state}<br/> {brewery.country} - {brewery.postal_code}</td>
                                 <td><a href={brewery.website_url} target="_blank">{brewery.website_url}</a></td>
                                 <td>
                                     <NavLink className="btn btn-primary" to={`/BreweryDetail/${brewery.name}/${brewery.id}`}>View</NavLink>
